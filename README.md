@@ -456,47 +456,6 @@ ORDER BY HOUR(transaction_time);
 
 ---
 
-## ✅ Recommendations
-*These are suggestions drawn from one month of detailed analysis and should be tested before acting on them.*
-- **Staff for the 7 to 10 AM rush** at all three stores, since this window carries over a third of revenue.
-- **Run afternoon offers** (for example, a bakery and drink bundle after 11 AM) to lift the flat mid-day period.
-- **Protect the core range:** Coffee and Tea are about two-thirds of sales, so keep availability and quality of the top espresso, chai, and brewed coffee products high.
-- **Review late-evening hours:** sales after 8 PM are very small, so check whether the extra opening time is worth it.
-
----
-
-## 🗂 Repository Structure
-```
-coffee-shop-sales-analysis/
-├── README.md
-├── data/
-│   └── Coffee_Shop_Sales.xlsx
-├── sql/
-│   └── coffee_shop_queries.sql
-├── screenshots/                 (MySQL Workbench result grids, one per query)
-│   ├── 01_describe_table.png
-│   ├── 02_total_sales.png
-│   └── ...
-└── .gitignore
-```
-
----
-
-## ▶️ How to Run
-1. Clone this repository.
-2. Open MySQL Workbench and create the database and a table named `coffee_shop_sales`.
-3. Save the `Transactions` sheet as CSV and import it into the table (right-click the table > Table Data Import Wizard).
-4. Run the cleaning queries (date and time conversion, data types, column rename) from `sql/coffee_shop_queries.sql`.
-5. Run `DESCRIBE coffee_shop_sales;` to confirm the data types match the data dictionary, and check `SELECT COUNT(*) FROM coffee_shop_sales;` returns **149,116**.
-6. Run the analysis queries. Change `MONTH(transaction_date) = 5` to look at a different month.
-
----
-
-## ⚠️ Limitations & Next Steps
-- The detailed analysis covers **May 2023** (with April for comparison). The dataset runs from January to June, so the same queries can be repeated for other months.
-- The data covers only **six months**, so growth cannot be separated from seasonal patterns.
-- There are no customer or cost fields, so profit and customer-level analysis are not possible.
-- **Next steps:** compare every month in one query, build a basket analysis (which products sell together), and compare store performance by hour.
 
 ---
 
